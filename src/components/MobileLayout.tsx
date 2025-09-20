@@ -20,16 +20,13 @@ interface MobileLayoutProps {
     experienceCount: number;
     clientsCount: number;
     statsRef: React.RefObject<HTMLDivElement>;
-    experienceVisible: boolean;
     animatedExperience: number[];
     experienceRef: React.RefObject<HTMLDivElement>;
-    stacksVisible: boolean;
     animatedStacks: number[];
     stackProgress: { [key: number]: number };
     stacksRef: React.RefObject<HTMLDivElement>;
     loadedImages: Set<string>;
     handleImageLoad: (src: string) => void;
-    educationVisible: boolean;
     animatedEducation: number[];
     educationRef: React.RefObject<HTMLDivElement>;
     devNameShort: string;
@@ -49,16 +46,13 @@ export default function MobileLayout({
     experienceCount,
     clientsCount,
     statsRef,
-    experienceVisible,
     animatedExperience,
     experienceRef,
-    stacksVisible,
     animatedStacks,
     stackProgress,
     stacksRef,
     loadedImages,
     handleImageLoad,
-    educationVisible,
     animatedEducation,
     educationRef,
     devNameShort
@@ -218,13 +212,11 @@ export default function MobileLayout({
             </section>
 
             <Experience
-                experienceVisible={experienceVisible}
                 animatedExperience={animatedExperience}
                 experienceRef={experienceRef}
             />
 
             <Stacks
-                stacksVisible={stacksVisible}
                 animatedStacks={animatedStacks}
                 stackProgress={stackProgress}
                 stacksRef={stacksRef}
@@ -233,7 +225,6 @@ export default function MobileLayout({
             />
 
             <Education
-                educationVisible={educationVisible}
                 animatedEducation={animatedEducation}
                 educationRef={educationRef}
             />

@@ -3,13 +3,11 @@ import { AppConstants } from '../utilities/app_constants';
 import { Experience as ExperienceType } from '../utilities/types';
 
 interface ExperienceProps {
-    experienceVisible: boolean;
     animatedExperience: number[];
     experienceRef: React.RefObject<HTMLDivElement>;
 }
 
 export default function Experience({
-    experienceVisible,
     animatedExperience,
     experienceRef
 }: ExperienceProps) {
