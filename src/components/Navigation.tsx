@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Mail, Github, Linkedin } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface NavigationProps {
     devName: string;
 }
 
 function Navigation({ devName }: NavigationProps) {
+    const navigate = useNavigate();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const role = import.meta.env.VITE_ROLE;
@@ -26,6 +27,31 @@ function Navigation({ devName }: NavigationProps) {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    useEffect(() => {
+        // Handle hash navigation when component mounts or hash changes
+        const handleHashNavigation = () => {
+            const hash = window.location.hash;
+            if (hash) {
+                const element = document.getElementById(hash.substring(1));
+                if (element) {
+                    setTimeout(() => {
+                        element.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 100);
+                }
+            }
+        };
+
+        // Handle initial hash
+        handleHashNavigation();
+
+        // Listen for hash changes
+        window.addEventListener('hashchange', handleHashNavigation);
+        return () => window.removeEventListener('hashchange', handleHashNavigation);
+    }, []);
+
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
@@ -36,6 +62,12 @@ function Navigation({ devName }: NavigationProps) {
 
     const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
+        // If we're not on the home page, navigate to home first
+        if (window.location.pathname !== '/') {
+            navigate('/#contact');
+            return;
+        }
+
         const contactSection = document.getElementById('contact');
         if (contactSection) {
             contactSection.scrollIntoView({
@@ -53,7 +85,7 @@ function Navigation({ devName }: NavigationProps) {
         e.preventDefault();
         // If we're not on the home page, navigate to home first
         if (window.location.pathname !== '/') {
-            window.location.href = '/#skills';
+            navigate('/#skills');
             return;
         }
 
