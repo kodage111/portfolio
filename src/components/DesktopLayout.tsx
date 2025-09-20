@@ -18,16 +18,13 @@ interface DesktopLayoutProps {
     experienceCount: number;
     clientsCount: number;
     statsRef: React.RefObject<HTMLDivElement>;
-    experienceVisible: boolean;
     animatedExperience: number[];
     experienceRef: React.RefObject<HTMLDivElement>;
-    stacksVisible: boolean;
     animatedStacks: number[];
     stackProgress: { [key: number]: number };
     stacksRef: React.RefObject<HTMLDivElement>;
     loadedImages: Set<string>;
     handleImageLoad: (src: string) => void;
-    educationVisible: boolean;
     animatedEducation: number[];
     educationRef: React.RefObject<HTMLDivElement>;
     devNameShort: string;
@@ -49,16 +46,13 @@ export default function DesktopLayout({
     experienceCount,
     clientsCount,
     statsRef,
-    experienceVisible,
     animatedExperience,
     experienceRef,
-    stacksVisible,
     animatedStacks,
     stackProgress,
     stacksRef,
     loadedImages,
     handleImageLoad,
-    educationVisible,
     animatedEducation,
     educationRef,
     devNameShort,
@@ -150,13 +144,11 @@ export default function DesktopLayout({
                 />
 
                 <Experience
-                    experienceVisible={experienceVisible}
                     animatedExperience={animatedExperience}
                     experienceRef={experienceRef}
                 />
 
                 <Stacks
-                    stacksVisible={stacksVisible}
                     animatedStacks={animatedStacks}
                     stackProgress={stackProgress}
                     stacksRef={stacksRef}
@@ -165,7 +157,6 @@ export default function DesktopLayout({
                 />
 
                 <Education
-                    educationVisible={educationVisible}
                     animatedEducation={animatedEducation}
                     educationRef={educationRef}
                 />

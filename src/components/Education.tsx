@@ -3,13 +3,11 @@ import { AppConstants } from '../utilities/app_constants';
 import { Education as EducationType } from '../utilities/types';
 
 interface EducationProps {
-    educationVisible: boolean;
     animatedEducation: number[];
     educationRef: React.RefObject<HTMLDivElement>;
 }
 
 export default function Education({
-    educationVisible,
     animatedEducation,
     educationRef
 }: EducationProps) {

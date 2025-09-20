@@ -3,7 +3,6 @@ import { AppConstants } from '../utilities/app_constants';
 import { Stack } from '../utilities/types';
 
 interface StacksProps {
-    stacksVisible: boolean;
     animatedStacks: number[];
     stackProgress: { [key: number]: number };
     stacksRef: React.RefObject<HTMLDivElement>;
@@ -12,7 +11,6 @@ interface StacksProps {
 }
 
 export default function Stacks({
-    stacksVisible,
     animatedStacks,
     stackProgress,
     stacksRef,
