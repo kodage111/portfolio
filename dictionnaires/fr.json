@@ -22,11 +22,11 @@
     "disponibilite": "Disponible en freelance",
     "ctaProjet": "Vous avez un projet",
     "ctaRecrute": "Vous recrutez",
-    "portraitAlt": "Portrait d'Emmanuel Tene"
+    "portraitAlt": "Portrait d’Emmanuel Tene"
   },
   "projetPhare": {
     "surtitre": "Projet phare",
-    "voirEtude": "Lire l'étude de cas"
+    "voirEtude": "Lire l’étude de cas"
   },
   "projets": {
     "surtitre": "Projets",
@@ -63,7 +63,7 @@
       },
       {
         "titre": "Backend Firebase / Node",
-        "description": "Le socle qui fait tourner l'app : données, règles, fonctions, notifications.",
+        "description": "Le socle qui fait tourner l’app : données, règles, fonctions, notifications.",
         "livrables": [
           "Firestore, règles de sécurité, Cloud Functions",
           "APIs NestJS / Express, PostgreSQL",
@@ -74,7 +74,7 @@
   },
   "stack": {
     "surtitre": "Stack",
-    "titre": "Outils que j'utilise au quotidien",
+    "titre": "Outils que j’utilise au quotidien",
     "groupes": {
       "langages": "Langages",
       "frameworks": "Frameworks",
@@ -86,7 +86,7 @@
     "surtitre": "Parcours",
     "titre": "Trois étapes",
     "voirTout": "Voir le parcours complet",
-    "aujourdhui": "aujourd'hui",
+    "aujourdhui": "aujourd’hui",
     "contrat": {
       "tempsPartiel": "Temps partiel",
       "freelance": "Freelance",
@@ -115,7 +115,7 @@
     "intro": [
       "Je suis Software Engineer chez Titans, où je construis le point de vente mobile et web utilisé par des maquis, restaurants et dépôts, et son back-office.",
       "Avant cela, deux ans en freelance sur des applications Flutter avec des backends Node.js et Spring Boot, et un an chez Spreeloop à livrer du mobile, du web et des tests.",
-      "Ce qui m'intéresse : des produits qui marchent hors ligne, une architecture qui tient quand l'équipe grandit, et du code que quelqu'un d'autre peut reprendre."
+      "Ce qui m’intéresse : des produits qui marchent hors ligne, une architecture qui tient quand l’équipe grandit, et du code que quelqu’un d’autre peut reprendre."
     ],
     "experience": "Expérience",
     "formation": "Formation",
@@ -125,7 +125,7 @@
         "Tests unitaires, widget et intégration avant la mise en production.",
         "Architecture par modules, séparation dépôt / service / interface.",
         "Intégration continue : lint, typage, tests et build sur chaque PR.",
-        "Revue de code et documentation en français ou en anglais selon l'équipe."
+        "Revue de code et documentation en français ou en anglais selon l’équipe."
       ]
     },
     "cv": "Télécharger le CV"
@@ -157,7 +157,7 @@
   },
   "nonTrouve": {
     "titre": "Page introuvable",
-    "texte": "Cette page n'existe pas ou a été déplacée.",
-    "retour": "Retour à l'accueil"
+    "texte": "Cette page n’existe pas ou a été déplacée.",
+    "retour": "Retour à l’accueil"
   }
 }

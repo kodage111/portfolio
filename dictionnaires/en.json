@@ -16,7 +16,7 @@
     "changer": "Switch language"
   },
   "hero": {
-    "salutation": "Hi, I'm",
+    "salutation": "Hi, I’m",
     "positionnement": "Software Engineer at Titans · Flutter & Next.js Developer · Douala, remote",
     "accroche": "I design and ship mobile and web applications that hold up in production: from the Flutter point of sale used daily in shops to the Next.js back-office that runs it.",
     "disponibilite": "Available for freelance",
@@ -96,9 +96,9 @@
   },
   "contact": {
     "surtitre": "Contact",
-    "titre": "Let's talk about your project, or your team",
-    "texte": "I reply within 24 hours. WhatsApp to move fast, email for details, LinkedIn if you're hiring.",
-    "messageWhatsapp": "Hi Emmanuel, I'm reaching out from your portfolio.",
+    "titre": "Let’s talk about your project, or your team",
+    "texte": "I reply within 24 hours. WhatsApp to move fast, email for details, LinkedIn if you’re hiring.",
+    "messageWhatsapp": "Hi Emmanuel, I’m reaching out from your portfolio.",
     "email": "Send an email",
     "whatsapp": "Message on WhatsApp",
     "linkedin": "LinkedIn",
@@ -113,7 +113,7 @@
   "aPropos": {
     "titre": "About",
     "intro": [
-      "I'm a Software Engineer at Titans, where I build the mobile and web point of sale used by bars, restaurants and warehouses, and the back-office behind it.",
+      "I’m a Software Engineer at Titans, where I build the mobile and web point of sale used by bars, restaurants and warehouses, and the back-office behind it.",
       "Before that, two years freelancing on Flutter apps with Node.js and Spring Boot backends, and a year at Spreeloop shipping mobile, web and tests.",
       "What I care about: products that work offline, an architecture that holds as the team grows, and code someone else can pick up."
     ],
@@ -157,7 +157,7 @@
   },
   "nonTrouve": {
     "titre": "Page not found",
-    "texte": "This page doesn't exist or has moved.",
+    "texte": "This page doesn’t exist or has moved.",
     "retour": "Back to home"
   }
 }
