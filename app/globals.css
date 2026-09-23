@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+/*
+ * Tokens du système visuel — seule source de vérité pour couleurs, fontes,
+ * rayons, tailles et espacements. Aucun composant ne porte de valeur en dur.
+ */
+@theme {
+  --color-fond: #0a0a0b;
+  --color-surface: #141416;
+  --color-surface-elevee: #1c1c1f;
+  --color-bordure: #26262b;
+  --color-texte: #f2f2f0;
+  --color-texte-secondaire: #a1a1a6;
+  --color-accent: #b6f400;
+  --color-accent-sombre: #7faa00;
+
+  --radius-puce: 0.5rem;
+  --radius-carte: 1rem;
+  --radius-mockup: 1.5rem;
+
+  --spacing-section: 6rem;
+  --spacing-section-mobile: 4rem;
+
+  --container-site: 75rem;
+  --container-telephone: 17.5rem;
+  --container-portrait: 26rem;
+
+  --text-display: 3.5rem;
+  --text-display--line-height: 1.05;
+  --text-display-mobile: 2.5rem;
+  --text-display-mobile--line-height: 1.1;
+  --text-h2: 2rem;
+  --text-h2--line-height: 1.15;
+  --text-h3: 1.5rem;
+  --text-h3--line-height: 1.25;
+  --text-corps-large: 1.125rem;
+  --text-corps-large--line-height: 1.6;
+  --text-mono: 0.8125rem;
+  --text-mono--line-height: 1.4;
+
+  --aspect-telephone: 9 / 19;
+  --aspect-navigateur: 16 / 10;
+
+  --ease-sortie: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Fontes chargées par next/font dans le layout ; résolues à l'usage, pas à :root. */
+@theme inline {
+  --font-display: var(--font-syne), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains), monospace;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-fond);
+    color: var(--color-texte);
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-fond);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Conteneur centré : 1200 px max, gouttière 16 px mobile / 24 px desktop. */
+@utility conteneur {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--container-site);
+  padding-inline: 1rem;
+  @media (width >= 48rem) { padding-inline: 1.5rem; }
+}
+
+/* Espacement vertical standard d'une section : 64 px mobile / 96 px desktop. */
+@utility section-espace {
+  padding-block: var(--spacing-section-mobile);
+  @media (width >= 48rem) { padding-block: var(--spacing-section); }
+}
