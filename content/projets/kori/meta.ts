@@ -19,7 +19,7 @@ export const kori: MetaProjet = {
   apercu: '/projects/kori/kori-preview-1.png',
   galerie: [
     { src: '/projects/kori/kori-preview-2.png', legende: { fr: 'Aperçu de Korí', en: 'Korí overview' } },
-    { src: '/projects/kori/kori-1x1.png', legende: { fr: `Écran d'accueil`, en: 'Welcome screen' } },
+    { src: '/projects/kori/kori-1x1.png', legende: { fr: 'Écran d’accueil', en: 'Welcome screen' } },
     { src: '/projects/kori/kori-6x1.png', legende: { fr: 'Découverte et favoris', en: 'Discovery and favourites' } },
     { src: '/projects/kori/kori-2x1.png', legende: { fr: 'Réservation', en: 'Booking' } },
     { src: '/projects/kori/kori-3x1.png', legende: { fr: 'Fiche du salon', en: 'Salon detail' } },

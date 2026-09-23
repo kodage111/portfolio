@@ -5,7 +5,7 @@ export const titans: MetaProjet = {
   slug: 'titans',
   nom: 'Titans',
   accroche: {
-    fr: `Point de vente mobile et web pour maquis, restaurants et dépôts : caisse, stock, journée d'activité, hors ligne d'abord.`,
+    fr: 'Point de vente mobile et web pour maquis, restaurants et dépôts : caisse, stock, journée d’activité, hors ligne d’abord.',
     en: 'Mobile and web point of sale for bars, restaurants and warehouses: checkout, stock, business day, offline first.',
   },
   categorie: { fr: 'Point de vente & gestion', en: 'Point of sale & management' },

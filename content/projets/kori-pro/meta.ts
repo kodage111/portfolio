@@ -5,7 +5,7 @@ export const koriPro: MetaProjet = {
   slug: 'kori-pro',
   nom: 'Korí Pro',
   accroche: {
-    fr: `L'application des professionnels de la beauté : agenda, prestations, clients et paiements, sur iOS et Android.`,
+    fr: 'L’application des professionnels de la beauté : agenda, prestations, clients et paiements, sur iOS et Android.',
     en: 'The app for beauty professionals: agenda, services, clients and payments, on iOS and Android.',
   },
   categorie: { fr: 'Beauté & bien-être', en: 'Beauty & wellness' },
@@ -19,7 +19,7 @@ export const koriPro: MetaProjet = {
   apercu: '/projects/kori-pro/kori-pro-preview-1.png',
   galerie: [
     { src: '/projects/kori-pro/kori-pro-preview-2.png', legende: { fr: 'Aperçu de Korí Pro', en: 'Korí Pro overview' } },
-    { src: '/projects/kori-pro/kori-pro-0x2.png', legende: { fr: `Écran d'accueil`, en: 'Welcome screen' } },
+    { src: '/projects/kori-pro/kori-pro-0x2.png', legende: { fr: 'Écran d’accueil', en: 'Welcome screen' } },
     { src: '/projects/kori-pro/kori-pro-1x1.png', legende: { fr: 'Agenda des rendez-vous', en: 'Appointments agenda' } },
     { src: '/projects/kori-pro/kori-pro-2x1.png', legende: { fr: 'Fiche du salon', en: 'Salon detail' } },
     { src: '/projects/kori-pro/kori-pro-3x1.png', legende: { fr: 'Lieu de la prestation', en: 'Service location' } },

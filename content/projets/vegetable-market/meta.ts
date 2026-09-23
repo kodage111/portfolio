@@ -5,7 +5,7 @@ export const vegetableMarket: MetaProjet = {
   slug: 'vegetable-market',
   nom: 'Vegetable Market',
   accroche: {
-    fr: `Site vitrine d'un marchand de légumes : produits frais, valeurs nutritionnelles, saisons et conseils de cuisine.`,
+    fr: 'Site vitrine d’un marchand de légumes : produits frais, valeurs nutritionnelles, saisons et conseils de cuisine.',
     en: 'Showcase site for a vegetable shop: fresh produce, nutrition facts, seasons and cooking tips.',
   },
   categorie: { fr: 'E-commerce & commerce local', en: 'E-commerce & local business' },
@@ -21,7 +21,7 @@ export const vegetableMarket: MetaProjet = {
   logo: '/projects/vegetable-market/favicon.ico',
   apercu: '/projects/vegetable-market/m-vegetables-preview.png',
   galerie: [
-    { src: '/projects/vegetable-market/m-vegetables-preview.png', legende: { fr: `Page d'accueil`, en: 'Homepage' } },
+    { src: '/projects/vegetable-market/m-vegetables-preview.png', legende: { fr: 'Page d’accueil', en: 'Homepage' } },
     { src: '/projects/vegetable-market/m-vegetables-1.png', legende: { fr: 'Catalogue sur mobile', en: 'Catalog on mobile' } },
     { src: '/projects/vegetable-market/m-vegetables-2.png', legende: { fr: 'Fiche produit', en: 'Product details' } },
     { src: '/projects/vegetable-market/m-vegetables-3.png', legende: { fr: 'Valeurs nutritionnelles', en: 'Nutrition facts' } },
@@ -31,7 +31,7 @@ export const vegetableMarket: MetaProjet = {
   ],
   resultats: [
     { valeur: '0', libelle: { fr: 'framework : HTML, CSS et TypeScript', en: 'framework: HTML, CSS and TypeScript' } },
-    { valeur: 'Mobile', libelle: { fr: `pensé d'abord pour le téléphone`, en: 'designed phone-first' } },
+    { valeur: 'Mobile', libelle: { fr: 'pensé d’abord pour le téléphone', en: 'designed phone-first' } },
     { valeur: 'Vercel', libelle: { fr: 'démo en ligne', en: 'live demo' } },
   ],
   phare: false,

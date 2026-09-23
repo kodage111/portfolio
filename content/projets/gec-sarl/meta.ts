@@ -1,11 +1,11 @@
 import type { MetaProjet } from '@/lib/contenu/types';
 
-/** GEC S.A.R.L — site institutionnel d\'une entreprise de BTP. */
+/** GEC S.A.R.L — site institutionnel d'une entreprise de BTP. */
 export const gecSarl: MetaProjet = {
   slug: 'gec-sarl',
   nom: 'GEC S.A.R.L',
   accroche: {
-    fr: `Site institutionnel d'une entreprise de BTP : services, chantiers, équipe et contact, en thème sombre.`,
+    fr: 'Site institutionnel d’une entreprise de BTP : services, chantiers, équipe et contact, en thème sombre.',
     en: 'Corporate website for a construction company: services, projects, team and contact, dark theme.',
   },
   categorie: { fr: 'Entreprise & institutionnel', en: 'Corporate & business' },
@@ -21,7 +21,7 @@ export const gecSarl: MetaProjet = {
   logo: '/projects/gec/gec-logo.png',
   apercu: '/projects/gec/gec-preview.png',
   galerie: [
-    { src: '/projects/gec/gec-2.png', legende: { fr: `Page d'accueil`, en: 'Homepage' } },
+    { src: '/projects/gec/gec-2.png', legende: { fr: 'Page d’accueil', en: 'Homepage' } },
     { src: '/projects/gec/gec-3.png', legende: { fr: 'Services', en: 'Services' } },
     { src: '/projects/gec/gec-4.png', legende: { fr: 'Chantiers', en: 'Projects' } },
     { src: '/projects/gec/gec-5.png', legende: { fr: 'À propos', en: 'About' } },
