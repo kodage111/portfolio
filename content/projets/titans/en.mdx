@@ -1,0 +1,18 @@
+## Context
+
+Titans Groupe publishes a point of sale for neighbourhood businesses in West and Central Africa: bars, restaurants, beverage warehouses and other shops. Managers, waitresses and cashiers use it all day, often on entry-level phones with intermittent network.
+
+## Problem
+
+A checkout that waits for the network to record a sale loses sales. The application had to work locally first, sync afterwards, and stay consistent between the waiter’s phone, the manager’s tablet and the web POS at the counter.
+
+## Solution
+
+- Flutter mobile app, iOS and Android, with a local SQLite database: every read and write goes through the cache first, and an outbox replays writes to Firestore when the network comes back.
+- Next.js web POS sharing the same Firebase backend (Firestore, Auth, Cloud Functions, Storage) and the same security rules.
+- TypeScript Cloud Functions for what must be guaranteed server-side: custom-token authentication, scheduled reports, notifications, purges.
+- Administrative back-office in React and Node.js on Google Cloud Platform.
+
+## Results
+
+The product is live on the App Store and Play Store, and the web POS is in production. I run the weekly technical meetings, drive technical-debt reduction and new features, with unit, widget and integration tests on both platforms.

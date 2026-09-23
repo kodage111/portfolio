@@ -1,0 +1,18 @@
+## Contexte
+
+Titans Groupe édite un point de vente pour les commerces de proximité en Afrique de l’Ouest et centrale : maquis, restaurants, dépôts de boissons et autres boutiques. Gérants, serveuses et caissières l’utilisent toute la journée, souvent sur des téléphones d’entrée de gamme et avec un réseau intermittent.
+
+## Problème
+
+Une caisse qui attend le réseau pour enregistrer une vente perd des ventes. Il fallait une application qui fonctionne d’abord en local, synchronise ensuite, et reste cohérente entre le téléphone du serveur, la tablette du gérant et le POS web au comptoir.
+
+## Solution
+
+- Application mobile Flutter, iOS et Android, avec une base SQLite locale : chaque lecture et chaque écriture passent d’abord par le cache, une file de mutations rejoue les écritures vers Firestore quand le réseau revient.
+- POS web Next.js qui partage le même backend Firebase (Firestore, Auth, Cloud Functions, Storage) et les mêmes règles de sécurité.
+- Cloud Functions TypeScript pour ce qui doit être garanti côté serveur : authentification par jetons personnalisés, rapports planifiés, notifications, purge.
+- Back-office d’administration en React et Node.js sur Google Cloud Platform.
+
+## Résultats
+
+Le produit est publié sur l’App Store et le Play Store, et le POS web est en production. Je pilote les réunions techniques hebdomadaires, la réduction de la dette et l’arrivée des nouvelles fonctionnalités, avec des tests unitaires, widget et d’intégration sur les deux plateformes.
