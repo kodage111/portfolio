@@ -3510,7 +3510,7 @@ interface ProprietesGrilleProjets {
 /** Grille de projets sélectionnés avec lien vers la liste complète. */
 export function GrilleProjets({ lang, dict, projets }: ProprietesGrilleProjets) {
   return (
-    <Section | grep -o 'id="(projet-phare|projets|expertises|stack|parcours|contact)"' | wc -l bordure>
+    <Section id="projets" bordure>
       <div className="flex flex-wrap items-end justify-between gap-4">
         <TitreSection surtitre={dict.projets.surtitre} titre={dict.projets.titre} />
         <Bouton href={lien(lang, 'projets')} variante="lien" icone={<ArrowRight className="h-4 w-4" />}>
@@ -3543,7 +3543,7 @@ const ICONES = [Smartphone, Globe, Server];
 /** Trois cartes d'expertise (mobile, web, backend) avec livrables concrets. Textes du dictionnaire. */
 export function Expertises({ dict }: { dict: Dictionnaire }) {
   return (
-    <Section | grep -o 'id="(projet-phare|projets|expertises|stack|parcours|contact)"' | wc -l bordure>
+    <Section id="expertises" bordure>
       <TitreSection surtitre={dict.expertises.surtitre} titre={dict.expertises.titre} />
       <div className="mt-10 grid gap-6 md:grid-cols-3">
         {dict.expertises.cartes.map((carte, index) => {
@@ -3584,7 +3584,7 @@ import type { Dictionnaire } from '@/lib/i18n/dictionnaires';
 /** Mur de logos groupés par famille, sans niveau ni pourcentage. Logos sur tuile claire pour rester lisibles. */
 export function MurStack({ dict }: { dict: Dictionnaire }) {
   return (
-    <Section | grep -o 'id="(projet-phare|projets|expertises|stack|parcours|contact)"' | wc -l bordure>
+    <Section id="stack" bordure>
       <TitreSection surtitre={dict.stack.surtitre} titre={dict.stack.titre} />
       <div className="mt-10 grid gap-8 md:grid-cols-2">
         {GROUPES_STACK.map((groupe) => (
@@ -3631,7 +3631,7 @@ interface ProprietesParcoursResume {
 /** Trois jalons du parcours (période, poste, employeur, contrat) et lien vers la page À propos. */
 export function ParcoursResume({ lang, dict, experiences }: ProprietesParcoursResume) {
   return (
-    <Section | grep -o 'id="(projet-phare|projets|expertises|stack|parcours|contact)"' | wc -l bordure>
+    <Section id="parcours" bordure>
       <TitreSection surtitre={dict.parcours.surtitre} titre={dict.parcours.titre} />
       <ol className="mt-10 divide-y divide-bordure border-y border-bordure">
         {experiences.map((experience) => (
