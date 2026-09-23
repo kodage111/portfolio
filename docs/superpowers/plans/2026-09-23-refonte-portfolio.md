@@ -3797,7 +3797,7 @@ Run : `npm run typecheck && npm run lint && npm run build`
 Attendu : sans erreur. Puis serveur de dev en arrière-plan et :
 
 ```bash
-curl -s --retry 15 --retry-delay 1 --retry-connrefused http://localhost:3100/fr | grep -o 'id="(projet-phare|projets|expertises|stack|parcours|contact)"' | wc -l\|id="projets"\|id="expertises"\|id="stack"\|id="parcours"\|id="contact"'
+curl -s --retry 15 --retry-delay 1 --retry-connrefused http://localhost:3100/fr | grep -oE 'id="(projet-phare|projets|expertises|stack|parcours|contact)"' | wc -l
 curl -s http://localhost:3100/en | grep -o 'application/ld+json'
 curl -s http://localhost:3100/fr | grep -o 'href="/fr/projets/titans"' | head -1
 ```
