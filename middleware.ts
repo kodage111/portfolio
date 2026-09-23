@@ -16,7 +16,7 @@ export function middleware(requete: NextRequest) {
   return decision.type === 'redirection' ? NextResponse.redirect(url, 308) : NextResponse.rewrite(url);
 }
 
+/** Périmètre du middleware : tout sauf les internes Next, l'API et les fichiers (chemins contenant un point : images, sitemap.xml, robots.txt). */
 export const config = {
-  // Tout sauf les internes Next, l'API et les fichiers (chemins contenant un point : images, sitemap.xml, robots.txt).
   matcher: ['/((?!_next|api|.*\\..*).*)'],
 };

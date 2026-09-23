@@ -39,6 +39,10 @@ describe('deciderNavigation', () => {
       vers: '/en/projects/titans',
     });
     expect(deciderNavigation('/fr/about', null, undefined)).toEqual({ type: 'redirection', vers: '/fr/a-propos' });
+    expect(deciderNavigation('/en/projets/titans/plus', null, undefined)).toEqual({
+      type: 'redirection',
+      vers: '/en/projects/titans/plus',
+    });
   });
 
   it('laisse passer un segment inconnu (404 rendue par la page)', () => {

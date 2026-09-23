@@ -1,5 +1,5 @@
 import { detecterLangue, estLangue, type Lang } from './locales';
-import { lien, SEGMENTS, trouverSegment, type Route } from './routes';
+import { SEGMENTS, trouverSegment } from './routes';
 
 /** Ce que le middleware doit faire d'une requête. */
 export type DecisionNavigation =
@@ -36,8 +36,7 @@ export function deciderNavigation(
   if (!trouve) return { type: 'continuer' };
 
   if (trouve.langDuSegment !== lang) {
-    const route: Route = trouve.route === 'projets' && reste.length > 0 ? 'projet' : trouve.route;
-    return { type: 'redirection', vers: lien(lang, route, { slug: reste[0] }) };
+    return { type: 'redirection', vers: `/${[lang, SEGMENTS[trouve.route][lang], ...reste].join('/')}` };
   }
   const segmentInterne = SEGMENTS[trouve.route].fr;
   if (segment === segmentInterne) return { type: 'continuer' };
