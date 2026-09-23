@@ -1,18 +1,41 @@
+import type { Metadata } from 'next';
+import { Inter, JetBrains_Mono, Syne } from 'next/font/google';
 import type { ReactNode } from 'react';
+import { EnTete } from '@/composants/navigation/EnTete';
+import { PiedDePage } from '@/composants/navigation/PiedDePage';
+import { getDictionnaire } from '@/lib/i18n/dictionnaires';
+import { LANGUES } from '@/lib/i18n/locales';
+import { langDepuis, type ParametresLang } from '@/lib/i18n/params';
+import { genererMetadonnees } from '@/lib/seo';
 import '../globals.css';
 
-/** Mise en page racine temporaire — remplacée par la version complète à la tâche 8. */
-export default async function MiseEnPage({
-  children,
-  params,
-}: {
-  children: ReactNode;
-  params: Promise<{ lang: string }>;
-}) {
-  const { lang } = await params;
+const syne = Syne({ subsets: ['latin'], weight: ['600', '700', '800'], variable: '--font-syne', display: 'swap' });
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
+const jetbrains = JetBrains_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--font-jetbrains', display: 'swap' });
+
+/** Une page statique par langue. */
+export function generateStaticParams() {
+  return LANGUES.map((lang) => ({ lang }));
+}
+
+/** Métadonnées par défaut (les pages les remplacent). */
+export async function generateMetadata({ params }: ParametresLang): Promise<Metadata> {
+  const lang = langDepuis((await params).lang);
+  const dict = getDictionnaire(lang);
+  return genererMetadonnees({ lang, route: 'accueil', titre: dict.site.titre, description: dict.site.description });
+}
+
+/** Mise en page racine : fontes, en-tête, pied de page. */
+export default async function MiseEnPage({ children, params }: ParametresLang & { children: ReactNode }) {
+  const lang = langDepuis((await params).lang);
+  const dict = getDictionnaire(lang);
   return (
-    <html lang={lang}>
-      <body className="bg-fond font-sans text-texte">{children}</body>
+    <html lang={lang} className={`${syne.variable} ${inter.variable} ${jetbrains.variable}`}>
+      <body className="min-h-screen bg-fond font-sans text-texte antialiased">
+        <EnTete lang={lang} dict={dict} />
+        <main>{children}</main>
+        <PiedDePage dict={dict} />
+      </body>
     </html>
   );
 }
