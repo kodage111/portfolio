@@ -1,0 +1,173 @@
+{
+  "site": {
+    "titre": "Emmanuel Tene — Software Engineer, Flutter & Next.js",
+    "description": "Mobile and web developer based in Douala. Flutter apps, Next.js websites and back-offices, Firebase and Node backends. Available for freelance and remote work.",
+    "nomCourt": "Emmanuel Tene"
+  },
+  "nav": {
+    "accueil": "Home",
+    "projets": "Projects",
+    "aPropos": "About",
+    "ariaPrincipale": "Main navigation"
+  },
+  "langue": {
+    "fr": "FR",
+    "en": "EN",
+    "changer": "Switch language"
+  },
+  "hero": {
+    "salutation": "Hi, I’m",
+    "positionnement": "Software Engineer at Titans · Flutter & Next.js Developer · Douala, remote",
+    "accroche": "I design and ship mobile and web applications that hold up in production: from the Flutter point of sale used daily in shops to the Next.js back-office that runs it.",
+    "disponibilite": "Available for freelance",
+    "ctaProjet": "Have a project?",
+    "ctaRecrute": "Hiring?",
+    "portraitAlt": "Portrait of Emmanuel Tene"
+  },
+  "projetPhare": {
+    "surtitre": "Featured project",
+    "voirEtude": "Read the case study"
+  },
+  "projets": {
+    "surtitre": "Projects",
+    "titre": "Selected projects",
+    "titrePage": "All projects",
+    "introPage": "Mobile apps, websites and business tools, delivered for clients or built independently.",
+    "tous": "All projects",
+    "filtreAria": "Filter by type",
+    "filtre": {
+      "tous": "All",
+      "mobile": "Mobile",
+      "web": "Web"
+    },
+    "aucun": "No project in this category.",
+    "voir": "View project"
+  },
+  "expertises": {
+    "surtitre": "What I do",
+    "titre": "Three ways I can help",
+    "cartes": [
+      {
+        "titre": "Flutter mobile app",
+        "description": "One codebase, iOS and Android, published on the stores.",
+        "livrables": [
+          "Offline-first architecture (SQLite + sync)",
+          "Unit, widget and integration tests",
+          "App Store and Play Store release"
+        ]
+      },
+      {
+        "titre": "Next.js web app",
+        "description": "Fast, accessible, well-indexed websites, web POS and back-offices.",
+        "livrables": [
+          "App Router, server rendering, i18n",
+          "Tailwind design system",
+          "Vercel or Firebase Hosting deployment"
+        ]
+      },
+      {
+        "titre": "Firebase / Node backend",
+        "description": "The foundation that runs the app: data, rules, functions, notifications.",
+        "livrables": [
+          "Firestore, security rules, Cloud Functions",
+          "NestJS / Express APIs, PostgreSQL",
+          "CI, monitoring, documentation"
+        ]
+      }
+    ]
+  },
+  "stack": {
+    "surtitre": "Stack",
+    "titre": "Tools I use every day",
+    "groupes": {
+      "langages": "Languages",
+      "mobileWeb": "Mobile & web",
+      "backend": "Backend & frameworks",
+      "donnees": "Data",
+      "cloud": "Cloud & DevOps",
+      "outils": "Tools"
+    }
+  },
+  "parcours": {
+    "surtitre": "Career",
+    "titre": "Three chapters",
+    "voirTout": "See the full story",
+    "aujourdhui": "present",
+    "contrat": {
+      "tempsPartiel": "Part-time",
+      "freelance": "Freelance",
+      "stage": "Internship",
+      "tempsPlein": "Full-time"
+    }
+  },
+  "contact": {
+    "surtitre": "Contact",
+    "titre": "Let’s talk about your project, or your team",
+    "texte": "I reply within 24 hours. WhatsApp to move fast, email for details, LinkedIn if you’re hiring.",
+    "messageWhatsapp": "Hi Emmanuel, I’m reaching out from your portfolio.",
+    "email": "Send an email",
+    "whatsapp": "Message on WhatsApp",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "cv": "Download my CV",
+    "cvAutreLangue": "CV in French"
+  },
+  "piedDePage": {
+    "droits": "All rights reserved.",
+    "construit": "Built with Next.js, deployed on Vercel."
+  },
+  "aPropos": {
+    "titre": "About",
+    "intro": [
+      "I’m a Software Engineer at Titans, where I build the mobile and web point of sale used by bars, restaurants and warehouses, and the back-office behind it.",
+      "Before that, two years freelancing on Flutter apps with Node.js and Spring Boot backends, and a year at Spreeloop shipping mobile, web and tests.",
+      "What I care about: products that work offline, an architecture that holds as the team grows, and code someone else can pick up."
+    ],
+    "experience": "Experience",
+    "formation": "Education",
+    "methode": {
+      "titre": "How I work",
+      "points": [
+        "Unit, widget and integration tests before anything ships.",
+        "Modular architecture, repository / service / UI separation.",
+        "Continuous integration: lint, types, tests and build on every PR.",
+        "Code review and documentation in French or English, whichever the team uses."
+      ]
+    },
+    "cv": "Download my CV"
+  },
+  "projet": {
+    "etudeDeCas": "Case study",
+    "role": "Role",
+    "periode": "Period",
+    "client": "Client",
+    "stack": "Stack",
+    "plateformes": "Platforms",
+    "resultats": "In numbers",
+    "galerie": "Screenshots",
+    "liens": {
+      "site": "Official website",
+      "repo": "Source code",
+      "live": "View live",
+      "appStore": "App Store",
+      "playStore": "Play Store"
+    },
+    "visionneuse": {
+      "fermer": "Close",
+      "precedent": "Previous image",
+      "suivant": "Next image"
+    },
+    "precedent": "Previous project",
+    "suivant": "Next project",
+    "retour": "All projects",
+    "type": {
+      "mobile": "Mobile app",
+      "web": "Web app"
+    }
+  },
+  "nonTrouve": {
+    "titre": "Page not found",
+    "texte": "This page doesn’t exist or has moved.",
+    "retour": "Back to home"
+  }
+}
