@@ -113,12 +113,14 @@ Dossier `content/` :
 - `formations.ts` — trois diplômes de l'ancien site (Licence 2020–2022 et
   DUT 2017–2020 à l'IUT Fotso Victor, GCE A-Level 2014–2016 à Saint Paul's
   Comprehensive College). Corriger « technolog » → « Technology ».
-- `stack.ts` — technologies groupées **sans pourcentage** : Langages
-  (Dart, TypeScript, JavaScript, Kotlin, Java, HTML, CSS), Frameworks
-  (Flutter, React, Next.js, NestJS, Express, Spring Boot, Tailwind CSS),
-  Données (PostgreSQL, MySQL, MongoDB, SQLite, DynamoDB, Prisma), Cloud &
-  outils (Firebase, GCP, AWS, Node.js, Docker, Pulumi, Git, Figma). Icônes
-  reprises de l'ancien `app_constants.ts`.
+- `stack.ts` — technologies groupées **sans pourcentage**, six familles
+  (mise à jour 2026-09-24 d’après le README GitHub du propriétaire) : Langages
+  (Dart, Java, Kotlin, JavaScript, TypeScript, Python, C#, C++, C), Mobile &
+  web (Android, Flutter, React, Next.js), Backend & frameworks (Node.js,
+  Express.js, NestJS, Spring), Données (PostgreSQL, MongoDB, MySQL, SQLite),
+  Cloud & DevOps (Amazon AWS, Google Cloud, Firebase, Pulumi, Serverless),
+  Outils (Git, Arduino, Postman). Icônes devicon ; initiale en repli sans
+  icône (Serverless).
 - `projets/<slug>/meta.ts` + `fr.mdx` + `en.mdx`. Type `MetaProjet` :
   `slug`, `nom`, `accroche` (FR / EN), `categorie`, `type`
   (`mobile | web`), `plateformes` (`ios | android | web`), `stack[]`,

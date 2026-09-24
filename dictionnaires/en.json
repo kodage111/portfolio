@@ -35,7 +35,11 @@
     "introPage": "Mobile apps, websites and business tools, delivered for clients or built independently.",
     "tous": "All projects",
     "filtreAria": "Filter by type",
-    "filtre": { "tous": "All", "mobile": "Mobile", "web": "Web" },
+    "filtre": {
+      "tous": "All",
+      "mobile": "Mobile",
+      "web": "Web"
+    },
     "aucun": "No project in this category.",
     "voir": "View project"
   },
@@ -77,9 +81,11 @@
     "titre": "Tools I use every day",
     "groupes": {
       "langages": "Languages",
-      "frameworks": "Frameworks",
+      "mobileWeb": "Mobile & web",
+      "backend": "Backend & frameworks",
       "donnees": "Data",
-      "cloud": "Cloud & tools"
+      "cloud": "Cloud & DevOps",
+      "outils": "Tools"
     }
   },
   "parcours": {
@@ -154,7 +160,10 @@
     "precedent": "Previous project",
     "suivant": "Next project",
     "retour": "All projects",
-    "type": { "mobile": "Mobile app", "web": "Web app" }
+    "type": {
+      "mobile": "Mobile app",
+      "web": "Web app"
+    }
   },
   "nonTrouve": {
     "titre": "Page not found",

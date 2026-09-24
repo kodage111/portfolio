@@ -49,7 +49,7 @@ describe('stack', () => {
     const noms = technologies.map((t) => t.nom);
     expect(new Set(noms).size).toBe(noms.length);
     for (const t of technologies) {
-      expect(t.icone).toMatch(/^https:\/\/cdn\.jsdelivr\.net\/gh\/devicons\/devicon@latest\/icons\/.+\.svg$/);
+      if (t.icone) expect(t.icone).toMatch(/^https:\/\/cdn\.jsdelivr\.net\/gh\/devicons\/devicon@latest\/icons\/.+\.svg$/);
     }
   });
 });

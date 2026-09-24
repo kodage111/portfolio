@@ -34,12 +34,12 @@ export interface Formation {
 }
 
 /** Famille d'une technologie. Clés du dictionnaire `stack.groupes`. */
-export type GroupeStack = 'langages' | 'frameworks' | 'donnees' | 'cloud';
+export type GroupeStack = 'langages' | 'mobileWeb' | 'backend' | 'donnees' | 'cloud' | 'outils';
 
-/** Une technologie du mur de stack. `icone` est une URL devicon. */
+/** Une technologie du mur de stack. `icone` est une URL devicon ; absente, l’initiale du nom est affichée. */
 export interface Technologie {
   nom: string;
-  icone: string;
+  icone?: string;
   groupe: GroupeStack;
 }
 

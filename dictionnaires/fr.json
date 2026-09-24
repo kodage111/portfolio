@@ -35,7 +35,11 @@
     "introPage": "Applications mobiles, sites et outils métier, livrés pour des clients ou construits en autonomie.",
     "tous": "Tous les projets",
     "filtreAria": "Filtrer par type",
-    "filtre": { "tous": "Tous", "mobile": "Mobile", "web": "Web" },
+    "filtre": {
+      "tous": "Tous",
+      "mobile": "Mobile",
+      "web": "Web"
+    },
     "aucun": "Aucun projet dans cette catégorie.",
     "voir": "Voir le projet"
   },
@@ -77,9 +81,11 @@
     "titre": "Outils que j’utilise au quotidien",
     "groupes": {
       "langages": "Langages",
-      "frameworks": "Frameworks",
+      "mobileWeb": "Mobile & web",
+      "backend": "Backend & frameworks",
       "donnees": "Données",
-      "cloud": "Cloud & outils"
+      "cloud": "Cloud & DevOps",
+      "outils": "Outils"
     }
   },
   "parcours": {
@@ -154,7 +160,10 @@
     "precedent": "Projet précédent",
     "suivant": "Projet suivant",
     "retour": "Tous les projets",
-    "type": { "mobile": "Application mobile", "web": "Application web" }
+    "type": {
+      "mobile": "Application mobile",
+      "web": "Application web"
+    }
   },
   "nonTrouve": {
     "titre": "Page introuvable",

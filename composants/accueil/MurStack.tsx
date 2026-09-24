@@ -4,7 +4,7 @@ import { TitreSection } from '@/composants/ui/TitreSection';
 import { GROUPES_STACK, technologiesParGroupe } from '@/content/stack';
 import type { Dictionnaire } from '@/lib/i18n/dictionnaires';
 
-/** Mur de logos groupés par famille, sans niveau ni pourcentage. Logos sur tuile claire pour rester lisibles. */
+/** Mur de logos groupés par famille, sans niveau ni pourcentage. Logos sur tuile claire ; initiale en repli sans icône. */
 export function MurStack({ dict }: { dict: Dictionnaire }) {
   return (
     <Section id="stack" bordure>
@@ -16,8 +16,12 @@ export function MurStack({ dict }: { dict: Dictionnaire }) {
             <ul className="mt-4 flex flex-wrap gap-3">
               {technologiesParGroupe(groupe).map((technologie) => (
                 <li key={technologie.nom} className="flex items-center gap-2 rounded-puce border border-bordure bg-surface py-2 pl-2 pr-3">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-sm bg-texte">
-                    <Image src={technologie.icone} alt="" width={20} height={20} unoptimized className="h-5 w-5" />
+                  <span className="flex h-7 w-7 items-center justify-center rounded-sm bg-texte font-mono text-mono font-medium text-fond">
+                    {technologie.icone ? (
+                      <Image src={technologie.icone} alt="" width={20} height={20} unoptimized className="h-5 w-5" />
+                    ) : (
+                      <span aria-hidden>{technologie.nom.charAt(0)}</span>
+                    )}
                   </span>
                   <span className="text-sm">{technologie.nom}</span>
                 </li>
