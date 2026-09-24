@@ -5,7 +5,7 @@ export type TypeAppareil = 'telephone' | 'navigateur';
 
 interface ProprietesCadreAppareil {
   type: TypeAppareil;
-  /** Capture à afficher. Absente : le logo est centré sur un dégradé accent. */
+  /** Capture à afficher. Absente : le logo est centré sur un fond neutre. */
   src?: string;
   alt: string;
   logo: string;
