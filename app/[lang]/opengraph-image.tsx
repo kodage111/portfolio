@@ -4,8 +4,11 @@ import { COULEURS_OG } from '@/lib/couleurs';
 import { getDictionnaire } from '@/lib/i18n/dictionnaires';
 import { langDepuis, type ParametresLang } from '@/lib/i18n/params';
 
+/** Texte alternatif de l'image Open Graph. */
 export const alt = 'Emmanuel Tene — Software Engineer';
+/** Dimensions recommandées par Open Graph (1200 × 630). */
 export const size = { width: 1200, height: 630 };
+/** Format de sortie de l'image. */
 export const contentType = 'image/png';
 
 /** Image Open Graph des pages générales : nom, positionnement, accent. */

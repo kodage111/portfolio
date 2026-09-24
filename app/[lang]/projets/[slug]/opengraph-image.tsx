@@ -1,10 +1,14 @@
 import { ImageResponse } from 'next/og';
+import { profil } from '@/content/profil';
 import { COULEURS_OG } from '@/lib/couleurs';
 import { trouverProjet } from '@/lib/contenu/projets';
 import { langDepuis } from '@/lib/i18n/params';
 
+/** Texte alternatif de l'image Open Graph. */
 export const alt = 'Étude de cas — Emmanuel Tene';
+/** Dimensions recommandées par Open Graph (1200 × 630). */
 export const size = { width: 1200, height: 630 };
+/** Format de sortie de l'image. */
 export const contentType = 'image/png';
 
 /** Image Open Graph d'une étude de cas : nom du projet, accroche, signature. */
@@ -34,7 +38,7 @@ export default async function ImageOpenGraphProjet({ params }: { params: Promise
           <div style={{ fontSize: 80, fontWeight: 700 }}>{nom}</div>
           <div style={{ fontSize: 30, color: COULEURS_OG.secondaire, lineHeight: 1.3 }}>{accroche}</div>
         </div>
-        <div style={{ fontSize: 26, color: COULEURS_OG.secondaire }}>Emmanuel Tene</div>
+        <div style={{ fontSize: 26, color: COULEURS_OG.secondaire }}>{profil.nomCourt}</div>
       </div>
     ),
     { ...size },
