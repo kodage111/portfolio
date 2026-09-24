@@ -26,7 +26,7 @@ export function CadreAppareil({ type, src, alt, logo, priorite = false, classNam
       className="object-cover object-top"
     />
   ) : (
-    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-accent/20 to-surface">
+    <div className="flex h-full w-full items-center justify-center bg-surface-elevee">
       <Image src={logo} alt={alt} width={120} height={120} unoptimized className="h-24 w-24 object-contain" />
     </div>
   );

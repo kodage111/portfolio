@@ -13,7 +13,7 @@ interface ProprietesHero {
   dict: Dictionnaire;
 }
 
-/** Hero : nom, positionnement, disponibilité, deux CTA (projet / recrutement), portrait duotone. */
+/** Hero : nom, positionnement, disponibilité, deux CTA (projet / recrutement), portrait. */
 export function Hero({ lang, dict }: ProprietesHero) {
   const { email, whatsapp, linkedin } = coordonnees();
   const hrefProjet = lienWhatsapp(whatsapp, dict.contact.messageWhatsapp) || (email ? `mailto:${email}` : '#contact');
@@ -50,7 +50,7 @@ export function Hero({ lang, dict }: ProprietesHero) {
         </div>
         <div className="relative mx-auto w-full max-w-portrait">
           <div aria-hidden className="absolute inset-0 translate-x-3 translate-y-3 rounded-carte border border-accent" />
-          <div className="relative overflow-hidden rounded-carte bg-accent">
+          <div className="relative overflow-hidden rounded-carte bg-surface">
             <Image
               src={profil.portrait}
               alt={dict.hero.portraitAlt}
@@ -58,7 +58,7 @@ export function Hero({ lang, dict }: ProprietesHero) {
               height={520}
               priority
               sizes="(min-width: 1024px) 26rem, 80vw"
-              className="h-auto w-full object-cover grayscale mix-blend-luminosity"
+              className="h-auto w-full object-cover"
             />
           </div>
         </div>
