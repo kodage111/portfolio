@@ -2,7 +2,13 @@ import { NextResponse, type NextRequest } from 'next/server';
 import { COOKIE_LANGUE } from '@/lib/i18n/locales';
 import { deciderNavigation } from '@/lib/i18n/navigation';
 
-/** Applique à chaque requête de page la décision de navigation (langue, slugs localisés). Redirections en 308. */
+/**
+ * Applique à chaque requête de page la décision de navigation (langue, slugs
+ * localisés). Une redirection de détection de langue est temporaire (307,
+ * dépend de `Accept-Language`/du cookie et ne doit pas être mise en cache
+ * par le navigateur) ; une redirection vers le segment canonique est
+ * permanente (308).
+ */
 export function middleware(requete: NextRequest) {
   const decision = deciderNavigation(
     requete.nextUrl.pathname,
@@ -13,7 +19,9 @@ export function middleware(requete: NextRequest) {
 
   const url = requete.nextUrl.clone();
   url.pathname = decision.vers;
-  return decision.type === 'redirection' ? NextResponse.redirect(url, 308) : NextResponse.rewrite(url);
+  return decision.type === 'redirection'
+    ? NextResponse.redirect(url, decision.permanente ? 308 : 307)
+    : NextResponse.rewrite(url);
 }
 
 /** Périmètre du middleware : tout sauf les internes Next, l'API et les fichiers (chemins contenant un point : images, sitemap.xml, robots.txt). */
