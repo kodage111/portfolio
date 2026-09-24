@@ -1,6 +1,6 @@
 import type { MetaProjet } from '@/lib/contenu/types';
 
-/** Titans — point de vente de Titans Groupe. Captures à ajouter par le propriétaire (`apercu`, `galerie`). */
+/** Titans — point de vente de Titans Groupe. Captures mobiles fournies par le propriétaire (2026-09-24). */
 export const titans: MetaProjet = {
   slug: 'titans',
   nom: 'Titans',
@@ -25,7 +25,17 @@ export const titans: MetaProjet = {
     playStore: 'https://play.google.com/store/apps/details?id=titans.titans',
   },
   logo: '/projects/titans/titans-logo.png',
-  galerie: [],
+  apercu: '/projects/titans/titans-mobile-1.jpg',
+  galerie: [
+    { src: '/projects/titans/titans-mobile-1.jpg', legende: { fr: 'Prise de commande : catalogue par catégorie', en: 'Order taking: catalog by category' } },
+    { src: '/projects/titans/titans-mobile-2.jpg', legende: { fr: 'Panier et envoi à la caisse', en: 'Cart and send to checkout' } },
+    { src: '/projects/titans/titans-mobile-3.jpg', legende: { fr: 'Reçu avec QR code et crédit client', en: 'Receipt with QR code and customer credit' } },
+    { src: '/projects/titans/titans-mobile-4.jpg', legende: { fr: 'Résultats de la période', en: 'Period results' } },
+    { src: '/projects/titans/titans-mobile-5.jpg', legende: { fr: 'Marge par produit et par lot', en: 'Margin per product and per batch' } },
+    { src: '/projects/titans/titans-mobile-6.jpg', legende: { fr: 'Dépenses du jour', en: 'Daily expenses' } },
+    { src: '/projects/titans/titans-mobile-7.jpg', legende: { fr: 'Point hebdomadaire : meilleures ventes et stock dormant', en: 'Weekly review: top sales and dormant stock' } },
+    { src: '/projects/titans/titans-mobile-8.jpg', legende: { fr: 'Fiche stock d’un produit', en: 'Product stock card' } },
+  ],
   resultats: [
     { valeur: '3', libelle: { fr: 'plateformes : iOS, Android, web', en: 'platforms: iOS, Android, web' } },
     { valeur: '4', libelle: { fr: 'types de commerce couverts', en: 'business types covered' } },
