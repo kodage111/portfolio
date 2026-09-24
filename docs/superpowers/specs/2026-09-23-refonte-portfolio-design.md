@@ -141,7 +141,7 @@ Dossier `content/` :
    Titans · Développeur Flutter & Next.js · Douala, remote »), badge
    « Disponible en freelance », deux CTA : « Vous avez un projet »
    (WhatsApp + email) et « Vous recrutez » (CV + LinkedIn). Portrait
-   détouré avec traitement duotone accent.
+   en couleurs naturelles, liseré accent décalé (duotone abandonné le 2026-09-24).
 2. **Projet phare** (Titans) — mockups téléphone + navigateur, trois
    métriques, lien vers l'étude de cas.
 3. **Projets sélectionnés** — trois cartes + lien « Tous les projets ».
