@@ -8,7 +8,7 @@ const compat = new FlatCompat({ baseDirectory: racine });
 /** Règles Next.js (core-web-vitals + TypeScript) en config plate ESLint 9. */
 const config = [
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
-  { ignores: ['.next/**', 'node_modules/**', 'next-env.d.ts'] },
+  { ignores: ['.next/**', 'node_modules/**', 'next-env.d.ts', '.superpowers/**'] },
 ];
 
 export default config;
