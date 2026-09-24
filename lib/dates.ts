@@ -9,6 +9,11 @@ export function formaterMois(aaaaMm: string, lang: Lang): string {
   return new Intl.DateTimeFormat(LOCALES[lang], { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(date);
 }
 
+/** Formate `AAAA-MM` en son année seule, ex. `2020-01` → `2020`. */
+export function formaterAnnee(aaaaMm: string): string {
+  return aaaaMm.split('-')[0];
+}
+
 /** Formate une période « mars 2024 – aujourd'hui ». [libelleEnCours] remplace une fin absente. */
 export function formaterPeriode(debut: string, fin: string | null, lang: Lang, libelleEnCours: string): string {
   return `${formaterMois(debut, lang)} – ${fin ? formaterMois(fin, lang) : libelleEnCours}`;

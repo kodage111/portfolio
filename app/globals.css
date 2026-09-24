@@ -96,3 +96,11 @@
   padding-block: var(--spacing-section-mobile);
   @media (width >= 48rem) { padding-block: var(--spacing-section); }
 }
+
+@layer components {
+  /* Révélation au défilement : masqué avant l'entrée dans la fenêtre, sauf sans script ou en mouvement réduit. */
+  .revelation-masquee { opacity: 0; transform: translateY(1rem); }
+  @media (scripting: none), (prefers-reduced-motion: reduce) {
+    .revelation-masquee { opacity: 1; transform: none; }
+  }
+}

@@ -2,9 +2,11 @@ import { FaGithub, FaLinkedinIn } from 'react-icons/fa6';
 import { profil } from '@/content/profil';
 import { coordonnees } from '@/lib/contact';
 import type { Dictionnaire } from '@/lib/i18n/dictionnaires';
+import type { Lang } from '@/lib/i18n/locales';
+import { SelecteurLangue } from './SelecteurLangue';
 
-/** Pied de page : droits (année dynamique), liens sociaux, mention de construction. */
-export function PiedDePage({ dict }: { dict: Dictionnaire }) {
+/** Pied de page : droits (année dynamique), liens sociaux, sélecteur de langue, mention de construction. */
+export function PiedDePage({ lang, dict }: { lang: Lang; dict: Dictionnaire }) {
   const { linkedin } = coordonnees();
   const annee = new Date().getFullYear();
   return (
@@ -22,6 +24,7 @@ export function PiedDePage({ dict }: { dict: Dictionnaire }) {
               <FaLinkedinIn className="h-5 w-5" />
             </a>
           )}
+          <SelecteurLangue lang={lang} libelles={dict.langue} />
         </div>
         <p>{dict.piedDePage.construit}</p>
       </div>

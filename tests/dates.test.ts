@@ -1,10 +1,14 @@
 import { describe, expect, it } from 'vitest';
-import { formaterMois, formaterPeriode } from '@/lib/dates';
+import { formaterAnnee, formaterMois, formaterPeriode } from '@/lib/dates';
 
 describe('dates', () => {
   it('formate un mois dans chaque langue', () => {
     expect(formaterMois('2024-03', 'fr')).toBe('mars 2024');
     expect(formaterMois('2024-03', 'en')).toBe('March 2024');
+  });
+
+  it('formate une année seule', () => {
+    expect(formaterAnnee('2020-01')).toBe('2020');
   });
 
   it('formate une période close ou en cours', () => {

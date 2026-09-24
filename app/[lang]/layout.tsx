@@ -34,7 +34,7 @@ export default async function MiseEnPage({ children, params }: ParametresLang & 
       <body className="min-h-screen bg-fond font-sans text-texte antialiased">
         <EnTete lang={lang} dict={dict} />
         <main>{children}</main>
-        <PiedDePage dict={dict} />
+        <PiedDePage lang={lang} dict={dict} />
       </body>
     </html>
   );

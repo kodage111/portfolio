@@ -12,7 +12,10 @@ interface ProprietesRevelation {
 /**
  * Fait apparaître son contenu (fondu + translation 16 px, 300 ms) la première
  * fois qu'il entre dans la fenêtre. Sans IntersectionObserver, affiche direct.
- * `prefers-reduced-motion` est géré globalement dans `globals.css`.
+ * En mouvement réduit, affiche direct sans observer le défilement. La classe
+ * `.revelation-masquee` (`globals.css`) garde en plus le contenu visible sans
+ * script (`@media (scripting: none)`), pour qu'il ne reste jamais caché faute
+ * de JavaScript.
  */
 export function RevelationAuDefilement({ children, delai = 0, className = '' }: ProprietesRevelation) {
   const ref = useRef<HTMLDivElement>(null);
@@ -21,6 +24,10 @@ export function RevelationAuDefilement({ children, delai = 0, className = '' }: 
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setVisible(true);
+      return;
+    }
     if (typeof IntersectionObserver === 'undefined') {
       setVisible(true);
       return;
@@ -42,7 +49,7 @@ export function RevelationAuDefilement({ children, delai = 0, className = '' }: 
     <div
       ref={ref}
       style={{ transitionDelay: `${delai}ms` }}
-      className={`transition-all duration-300 ease-sortie ${visible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${className}`}
+      className={`transition-all duration-300 ease-sortie ${visible ? '' : 'revelation-masquee'} ${className}`}
     >
       {children}
     </div>
