@@ -35,7 +35,7 @@ export default async function PageProjets({ params, searchParams }: ProprietesPa
   return (
     <Section>
       <div className="max-w-2xl">
-        <TitreSection surtitre={dict.projets.surtitre} titre={dict.projets.titrePage} />
+        <TitreSection surtitre={dict.projets.surtitre} titre={dict.projets.titrePage} niveau="h1" />
         <p className="mt-4 text-corps-large text-texte-secondaire">{dict.projets.introPage}</p>
       </div>
       <div className="mt-8">

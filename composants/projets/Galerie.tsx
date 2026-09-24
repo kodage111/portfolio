@@ -35,7 +35,7 @@ export function Galerie({ images, titre, libelles }: ProprietesGalerie) {
                 className="object-cover object-top transition-transform duration-300 ease-sortie group-hover:scale-102"
               />
             </button>
-            <p className="mt-2 text-sm text-texte-secondaire">{image.alt}</p>
+            <p aria-hidden className="mt-2 text-sm text-texte-secondaire">{image.alt}</p>
           </li>
         ))}
       </ul>

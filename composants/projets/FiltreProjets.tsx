@@ -27,7 +27,7 @@ export function FiltreProjets({ lang, dict, actif }: ProprietesFiltreProjets) {
           <Link
             key={option.libelle}
             href={option.valeur ? `${base}?type=${option.valeur}` : base}
-            aria-current={estActif ? 'page' : undefined}
+            aria-current={estActif ? 'true' : undefined}
             className={`rounded-full border px-4 py-2 text-sm transition-colors duration-150 ${
               estActif ? 'border-accent bg-accent text-fond' : 'border-bordure text-texte-secondaire hover:border-texte hover:text-texte'
             }`}

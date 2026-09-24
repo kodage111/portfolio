@@ -29,20 +29,37 @@ const SEUIL_BALAYAGE = 40;
 /**
  * Visionneuse plein écran : flèches et Échap au clavier, balayage horizontal
  * au doigt, clic sur le fond pour fermer. Bloque le défilement de la page.
+ * Piège le focus au clavier (Tab/Shift+Tab) dans les boutons de la boîte de
+ * dialogue et restaure le focus sur l'élément déclencheur à la fermeture.
  */
 export function Visionneuse({ images, indexInitial, onFermer, libelles }: ProprietesVisionneuse) {
   const [index, setIndex] = useState(indexInitial);
   const departTouche = useRef<number | null>(null);
   const boutonFermer = useRef<HTMLButtonElement>(null);
+  const conteneur = useRef<HTMLDivElement>(null);
 
   const precedent = useCallback(() => setIndex((i) => (i - 1 + images.length) % images.length), [images.length]);
   const suivant = useCallback(() => setIndex((i) => (i + 1) % images.length), [images.length]);
 
   useEffect(() => {
+    const precedentElement = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     const surTouche = (evenement: KeyboardEvent) => {
       if (evenement.key === 'Escape') onFermer();
       if (evenement.key === 'ArrowLeft') precedent();
       if (evenement.key === 'ArrowRight') suivant();
+      if (evenement.key === 'Tab') {
+        const boutons = conteneur.current?.querySelectorAll<HTMLElement>('button');
+        if (!boutons || boutons.length === 0) return;
+        const premier = boutons[0];
+        const dernier = boutons[boutons.length - 1];
+        if (evenement.shiftKey && document.activeElement === premier) {
+          evenement.preventDefault();
+          dernier.focus();
+        } else if (!evenement.shiftKey && document.activeElement === dernier) {
+          evenement.preventDefault();
+          premier.focus();
+        }
+      }
     };
     window.addEventListener('keydown', surTouche);
     const debordement = document.body.style.overflow;
@@ -51,6 +68,7 @@ export function Visionneuse({ images, indexInitial, onFermer, libelles }: Propri
     return () => {
       window.removeEventListener('keydown', surTouche);
       document.body.style.overflow = debordement;
+      precedentElement?.focus();
     };
   }, [onFermer, precedent, suivant]);
 
@@ -60,6 +78,7 @@ export function Visionneuse({ images, indexInitial, onFermer, libelles }: Propri
 
   return (
     <div
+      ref={conteneur}
       role="dialog"
       aria-modal="true"
       aria-label={image.alt}

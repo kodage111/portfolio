@@ -33,7 +33,7 @@ export default async function PageAPropos({ params }: ParametresLang) {
     <>
       <Section bordure>
         <div className="max-w-3xl">
-          <TitreSection surtitre={dict.aPropos.titre} titre={profil.nomComplet} />
+          <TitreSection surtitre={dict.aPropos.titre} titre={profil.nomComplet} niveau="h1" />
           <p className="mt-2 text-texte-secondaire">
             {profil.role[lang]} · {profil.ville[lang]}
           </p>
