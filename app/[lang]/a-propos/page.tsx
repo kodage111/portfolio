@@ -56,7 +56,7 @@ export default async function PageAPropos({ params }: ParametresLang) {
         </div>
       </Section>
       <Section id="formation" bordure>
-        <TitreSection surtitre={dict.aPropos.formation} titre={dict.aPropos.formation} />
+        <TitreSection surtitre={dict.parcours.surtitre} titre={dict.aPropos.formation} />
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {formations.map((formation) => (
             <CarteFormation key={formation.id} lang={lang} formation={formation} />
@@ -64,7 +64,7 @@ export default async function PageAPropos({ params }: ParametresLang) {
         </div>
       </Section>
       <Section id="methode">
-        <TitreSection surtitre={dict.aPropos.methode.titre} titre={dict.aPropos.methode.titre} />
+        <TitreSection surtitre={dict.aPropos.titre} titre={dict.aPropos.methode.titre} />
         <div className="mt-10">
           <Methode dict={dict} />
         </div>
