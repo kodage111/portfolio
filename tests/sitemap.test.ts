@@ -1,9 +1,13 @@
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import sitemap from '@/app/sitemap';
+
+afterEach(() => {
+  vi.unstubAllEnvs();
+});
 
 describe('sitemap', () => {
   it('liste chaque route dans les deux langues avec ses alternates', () => {
-    process.env.NEXT_PUBLIC_URL_SITE = 'https://exemple.com';
+    vi.stubEnv('NEXT_PUBLIC_URL_SITE', 'https://exemple.com');
     const entrees = sitemap();
     const urls = entrees.map((e) => e.url);
     expect(urls).toContain('https://exemple.com/fr');

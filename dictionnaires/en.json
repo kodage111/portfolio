@@ -131,6 +131,7 @@
     "cv": "Download my CV"
   },
   "projet": {
+    "etudeDeCas": "Case study",
     "role": "Role",
     "periode": "Period",
     "client": "Client",

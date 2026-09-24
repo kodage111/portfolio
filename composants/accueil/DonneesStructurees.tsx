@@ -14,9 +14,9 @@ export function DonneesStructurees({ lang }: { lang: Lang }) {
     jobTitle: profil.role[lang],
     url: `${urlSite}${lien(lang, 'accueil')}`,
     email: email || undefined,
-    address: { '@type': 'PostalAddress', addressLocality: 'Douala', addressCountry: 'CM' },
+    address: { '@type': 'PostalAddress', addressLocality: profil.adresse.localite, addressCountry: profil.adresse.pays },
     sameAs: [profil.github, linkedin].filter(Boolean),
-    worksFor: { '@type': 'Organization', name: 'Titans Groupe', url: 'https://titans-groupe.com' },
+    worksFor: { '@type': 'Organization', name: profil.employeur.nom, url: profil.employeur.url },
   };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(donnees) }} />;
 }

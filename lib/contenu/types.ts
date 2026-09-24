@@ -106,4 +106,8 @@ export interface Profil {
   github: string;
   cv: TexteLocalise;
   portrait: string;
+  /** Adresse postale utilisée par les données structurées JSON-LD. */
+  adresse: { localite: string; pays: string };
+  /** Employeur actuel, utilisé par les données structurées JSON-LD. */
+  employeur: { nom: string; url: string };
 }

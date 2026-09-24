@@ -131,6 +131,7 @@
     "cv": "Télécharger le CV"
   },
   "projet": {
+    "etudeDeCas": "Étude de cas",
     "role": "Rôle",
     "periode": "Période",
     "client": "Client",

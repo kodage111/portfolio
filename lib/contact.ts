@@ -9,14 +9,25 @@ export interface Coordonnees {
   urlSite: string;
 }
 
-/** Lit les coordonnées dans les variables `NEXT_PUBLIC_*`. Jamais de valeur en dur ailleurs. */
+/**
+ * Lit les coordonnées dans les variables `NEXT_PUBLIC_*`. Jamais de valeur en dur ailleurs.
+ *
+ * L'URL du site suit cet ordre de priorité : `NEXT_PUBLIC_URL_SITE` (définie
+ * explicitement) prime sur `VERCEL_PROJECT_PRODUCTION_URL` (domaine de
+ * production fourni par Vercel, sans schéma), qui prime sur `http://localhost:3000`
+ * en dernier recours. Sans cette cascade, une variable oubliée en production
+ * ferait retomber silencieusement le site sur `localhost`.
+ */
 export function coordonnees(): Coordonnees {
+  const urlVercel = process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : undefined;
   return {
     email: process.env.NEXT_PUBLIC_EMAIL ?? '',
     telephone: process.env.NEXT_PUBLIC_TELEPHONE ?? '',
     whatsapp: (process.env.NEXT_PUBLIC_WHATSAPP ?? '').replace(/\D/g, ''),
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN ?? '',
-    urlSite: (process.env.NEXT_PUBLIC_URL_SITE ?? 'http://localhost:3000').replace(/\/$/, ''),
+    urlSite: (process.env.NEXT_PUBLIC_URL_SITE ?? urlVercel ?? 'http://localhost:3000').replace(/\/$/, ''),
   };
 }
 

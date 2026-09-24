@@ -13,4 +13,6 @@ export const profil: Profil = {
   github: 'https://github.com/kodage111',
   cv: { fr: '/cv/cv-fr.pdf', en: '/cv/cv-en.pdf' },
   portrait: '/portrait/portrait.png',
+  adresse: { localite: 'Douala', pays: 'CM' },
+  employeur: { nom: 'Titans Groupe', url: 'https://titans-groupe.com' },
 };
