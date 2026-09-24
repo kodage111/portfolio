@@ -86,7 +86,7 @@ Dossier `content/` :
   |---|---|---|---|---|
   | 04/2026 – aujourd'hui | Software Engineer | Titans Côte d'Ivoire (Titans Groupe) | Douala, remote | Temps partiel |
   | 03/2024 – 04/2026 | Développeur Flutter freelance | Indépendant | Douala, remote | Freelance |
-  | 03/2023 – 03/2024 | Associate Software Developer | Spreeloop | Cameroun | Stage |
+  | 03/2023 – 03/2024 | Associate Software Developer | Spreeloop | Cameroun | Temps plein |
 
   Appskill Consulting (2021–2022) est retiré.
 

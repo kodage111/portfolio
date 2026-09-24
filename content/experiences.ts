@@ -57,7 +57,7 @@ export const experiences: Experience[] = [
     poste: { fr: 'Associate Software Developer', en: 'Associate Software Developer' },
     employeur: { fr: 'Spreeloop', en: 'Spreeloop' },
     lieu: { fr: 'Douala, Cameroun', en: 'Douala, Cameroon' },
-    typeContrat: 'stage',
+    typeContrat: 'tempsPlein',
     points: {
       fr: [
         'Maintenance des applications existantes et conception de nouvelles solutions, des services backend à l’intégration front.',
