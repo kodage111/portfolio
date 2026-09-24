@@ -84,7 +84,7 @@ export default async function PageProjet({ params }: ParametresProjet) {
               <LiensProjet liens={projet.liens} dict={dict} />
             </div>
           </div>
-          <CadreAppareil type={projet.type === 'mobile' ? 'telephone' : 'navigateur'} src={projet.apercu} logo={projet.logo} alt={projet.nom} priorite />
+          <CadreAppareil type={projet.type === 'mobile' ? 'telephone' : 'navigateur'} logo={projet.logo} alt={projet.nom} />
         </header>
 
         <div className="mt-16 grid gap-12 lg:grid-cols-[2fr_1fr]">
