@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, JetBrains_Mono, Syne } from 'next/font/google';
+import { JetBrains_Mono, Manrope, Syne } from 'next/font/google';
 import type { ReactNode } from 'react';
 import { EnTete } from '@/composants/navigation/EnTete';
 import { PiedDePage } from '@/composants/navigation/PiedDePage';
@@ -10,7 +10,7 @@ import { genererMetadonnees } from '@/lib/seo';
 import '../globals.css';
 
 const syne = Syne({ subsets: ['latin'], weight: ['600', '700', '800'], variable: '--font-syne', display: 'swap' });
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
+const manrope = Manrope({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-manrope', display: 'swap' });
 const jetbrains = JetBrains_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--font-jetbrains', display: 'swap' });
 
 /** Une page statique par langue. */
@@ -30,7 +30,7 @@ export default async function MiseEnPage({ children, params }: ParametresLang & 
   const lang = langDepuis((await params).lang);
   const dict = getDictionnaire(lang);
   return (
-    <html lang={lang} className={`${syne.variable} ${inter.variable} ${jetbrains.variable}`}>
+    <html lang={lang} className={`${syne.variable} ${manrope.variable} ${jetbrains.variable}`}>
       <body className="min-h-screen bg-fond font-sans text-texte antialiased">
         <EnTete lang={lang} dict={dict} />
         <main>{children}</main>

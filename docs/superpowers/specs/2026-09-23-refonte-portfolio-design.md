@@ -139,11 +139,13 @@ Dossier `content/` :
 
 ### Accueil `/[lang]`
 
-1. **Hero** — nom, positionnement en une ligne (« Software Engineer chez
-   Titans · Développeur Flutter & Next.js · Douala, remote »), badge
-   « Disponible en freelance », deux CTA : « Vous avez un projet »
-   (WhatsApp + email) et « Vous recrutez » (CV + LinkedIn). Portrait
-   en couleurs naturelles, liseré accent décalé (duotone abandonné le 2026-09-24).
+1. **Hero** (refonte du 2026-09-25, d’après une référence visuelle fournie) —
+   plein écran, halos verts flous qui dérivent, badge « Disponible »
+   pulsant, nom + rôle en titre géant Syne à dégradé (2 lignes), portrait
+   détouré (PNG transparent, `profil.portraitDetoure`) centré qui chevauche
+   le titre, accroche + CTA « Discutons » à gauche, nombre de projets livrés
+   (logos empilés) à droite, bandeau de chiffres défilant en pied. Entrée
+   animée en cascade, CSS pur ; mouvement réduit respecté.
 2. **Projet phare** (Titans) — mockups téléphone + navigateur, trois
    métriques, lien vers l'étude de cas.
 3. **Projets sélectionnés** — trois cartes + lien « Tous les projets ».
@@ -186,7 +188,7 @@ valeur inline hors tokens.
   bordure `#26262B`, texte `#F2F2F0`, texte secondaire `#A1A1A6`, accent
   `#B6F400` (vert acide), accent sombre `#7FAA00` pour les états.
 - Typographie via `next/font/google` : **Syne** (titres, 600–800),
-  **Inter** (corps), **JetBrains Mono** (dates, métriques, labels).
+  **Manrope** (corps, remplace Inter le 2026-09-25 : géométrique, assortie à Syne), **JetBrains Mono** (dates, métriques, labels).
   Échelle : display 56 / 40, h2 32, h3 24, corps 16 / 18, petit 14, mono 13.
 - Espacements : sections 96 px desktop / 64 px mobile ; conteneur 1200 px,
   gouttière 16 px mobile / 24 px desktop.

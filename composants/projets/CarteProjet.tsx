@@ -21,7 +21,7 @@ interface ProprietesCarteProjet {
 export function CarteProjet({ lang, dict, projet, delai = 0 }: ProprietesCarteProjet) {
   return (
     <RevelationAuDefilement delai={delai} className="h-full">
-      <article className="group flex h-full flex-col rounded-carte border border-bordure bg-surface transition-colors duration-150 hover:border-texte-secondaire">
+      <article className="group flex h-full flex-col lueur-survol rounded-carte border border-bordure bg-surface">
         <Link
           href={lien(lang, 'projet', { slug: projet.slug })}
           aria-label={`${dict.projets.voir} : ${projet.nom}`}

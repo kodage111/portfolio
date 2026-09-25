@@ -8,7 +8,8 @@
     "accueil": "Home",
     "projets": "Projects",
     "aPropos": "About",
-    "ariaPrincipale": "Main navigation"
+    "ariaPrincipale": "Main navigation",
+    "contact": "Get in touch"
   },
   "langue": {
     "fr": "FR",
@@ -22,7 +23,30 @@
     "disponibilite": "Available for freelance",
     "ctaProjet": "Have a project?",
     "ctaRecrute": "Hiring?",
-    "portraitAlt": "Portrait of Emmanuel Tene"
+    "portraitAlt": "Portrait of Emmanuel Tene",
+    "role": "Mobile & Web Dev",
+    "accrocheCourte": "I help businesses launch fast, reliable mobile and web apps that keep working even without a network.",
+    "ctaDiscuter": "Let’s talk",
+    "statLibelle": "projects shipped",
+    "bandeauAria": "Key figures",
+    "bandeau": [
+      {
+        "valeur": "3+",
+        "libelle": "years shipping to production"
+      },
+      {
+        "valeur": "iOS · Android · Web",
+        "libelle": "one team"
+      },
+      {
+        "valeur": "Offline",
+        "libelle": "first, synced later"
+      },
+      {
+        "valeur": "Flutter · Next.js",
+        "libelle": "and Firebase"
+      }
+    ]
   },
   "projetPhare": {
     "surtitre": "Featured project",

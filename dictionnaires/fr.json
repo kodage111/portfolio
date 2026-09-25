@@ -8,7 +8,8 @@
     "accueil": "Accueil",
     "projets": "Projets",
     "aPropos": "À propos",
-    "ariaPrincipale": "Navigation principale"
+    "ariaPrincipale": "Navigation principale",
+    "contact": "Me contacter"
   },
   "langue": {
     "fr": "FR",
@@ -22,7 +23,30 @@
     "disponibilite": "Disponible en freelance",
     "ctaProjet": "Vous avez un projet",
     "ctaRecrute": "Vous recrutez",
-    "portraitAlt": "Portrait d’Emmanuel Tene"
+    "portraitAlt": "Portrait d’Emmanuel Tene",
+    "role": "Dev mobile & web",
+    "accrocheCourte": "J’aide les entreprises à lancer des applications mobiles et web rapides, fiables, qui tournent même sans réseau.",
+    "ctaDiscuter": "Discutons",
+    "statLibelle": "projets livrés",
+    "bandeauAria": "Chiffres clés",
+    "bandeau": [
+      {
+        "valeur": "3+",
+        "libelle": "ans à livrer en production"
+      },
+      {
+        "valeur": "iOS · Android · Web",
+        "libelle": "une seule équipe"
+      },
+      {
+        "valeur": "Offline",
+        "libelle": "d’abord, synchronisé ensuite"
+      },
+      {
+        "valeur": "Flutter · Next.js",
+        "libelle": "et Firebase"
+      }
+    ]
   },
   "projetPhare": {
     "surtitre": "Projet phare",
