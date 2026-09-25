@@ -24,7 +24,8 @@
   --spacing-section-mobile: 4rem;
   /* Hauteur du hero : fenêtre moins l'en-tête (4 rem) et le bandeau (4,5 rem). */
   --spacing-hero: calc(100svh - 8.5rem);
-  --spacing-portrait-hero: 36rem;
+  /* Haut du portrait (desktop) : sous le badge (≈ 4,75 rem), au-dessus du titre (6 rem). */
+  --spacing-haut-portrait-hero: 5.25rem;
   --spacing-portrait-hero-mobile: 20rem;
 
   --container-site: 75rem;

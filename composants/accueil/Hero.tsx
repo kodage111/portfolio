@@ -49,7 +49,7 @@ export function Hero({ lang, dict }: ProprietesHero) {
         </h1>
 
         <div
-          className="fondu-bas relative z-20 mt-4 h-portrait-hero-mobile w-full animate-montee md:absolute md:bottom-0 md:left-1/2 md:mt-0 md:h-portrait-hero md:w-portrait-hero md:-translate-x-1/2"
+          className="fondu-bas relative z-20 mt-4 h-portrait-hero-mobile w-full animate-montee md:absolute md:top-haut-portrait-hero md:bottom-0 md:left-1/2 md:mt-0 md:h-auto md:w-portrait-hero md:-translate-x-1/2"
           style={delai(380)}
         >
           <Image
