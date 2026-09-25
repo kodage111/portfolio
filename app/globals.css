@@ -2,17 +2,19 @@
 
 /*
  * Tokens du système visuel — seule source de vérité pour couleurs, fontes,
- * rayons, tailles et espacements. Aucun composant ne porte de valeur en dur.
+ * rayons, tailles, espacements et animations. Aucun composant ne porte de
+ * valeur en dur.
  */
 @theme {
-  --color-fond: #0a0a0b;
-  --color-surface: #141416;
-  --color-surface-elevee: #1c1c1f;
-  --color-bordure: #26262b;
-  --color-texte: #f2f2f0;
-  --color-texte-secondaire: #a1a1a6;
+  --color-fond: #0f1110;
+  --color-surface: #171a18;
+  --color-surface-elevee: #1f2320;
+  --color-bordure: #2a2f2b;
+  --color-texte: #f4f5f2;
+  --color-texte-secondaire: #a3a8a2;
   --color-accent: #b6f400;
   --color-accent-sombre: #7faa00;
+  --color-halo: #5fd400;
 
   --radius-puce: 0.5rem;
   --radius-carte: 1rem;
@@ -20,11 +22,19 @@
 
   --spacing-section: 6rem;
   --spacing-section-mobile: 4rem;
+  /* Hauteur du hero : fenêtre moins l'en-tête (4 rem) et le bandeau (4,5 rem). */
+  --spacing-hero: calc(100svh - 8.5rem);
+  --spacing-portrait-hero: 36rem;
+  --spacing-portrait-hero-mobile: 20rem;
 
   --container-site: 75rem;
   --container-telephone: 17.5rem;
   --container-portrait: 26rem;
+  --container-accroche: 21rem;
+  --container-portrait-hero: 30rem;
 
+  --text-hero: clamp(2.25rem, 6.2vw, 5.25rem);
+  --text-hero--line-height: 1;
   --text-display: 3.5rem;
   --text-display--line-height: 1.05;
   --text-display-mobile: 2.5rem;
@@ -42,12 +52,39 @@
   --aspect-navigateur: 16 / 10;
 
   --ease-sortie: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Animations : entrée du hero, dérive des halos, pulsation du badge, bandeau défilant. */
+  --animate-apparition: apparition 900ms var(--ease-sortie) both;
+  --animate-montee: montee 1200ms var(--ease-sortie) both;
+  --animate-derive: derive 16s ease-in-out infinite alternate;
+  --animate-pulsation: pulsation 2s ease-out infinite;
+  --animate-defilement: defilement 40s linear infinite;
+
+  @keyframes apparition {
+    from { opacity: 0; transform: translateY(1.5rem); filter: blur(8px); }
+    to { opacity: 1; transform: none; filter: none; }
+  }
+  @keyframes montee {
+    from { opacity: 0; transform: translateY(3rem) scale(0.97); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes derive {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(-8%, 10%) scale(1.18); }
+  }
+  @keyframes pulsation {
+    from { box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-accent) 70%, transparent); }
+    to { box-shadow: 0 0 0 10px transparent; }
+  }
+  @keyframes defilement {
+    to { transform: translateX(-50%); }
+  }
 }
 
 /* Fontes chargées par next/font dans le layout ; résolues à l'usage, pas à :root. */
 @theme inline {
   --font-display: var(--font-syne), sans-serif;
-  --font-sans: var(--font-inter), sans-serif;
+  --font-sans: var(--font-manrope), sans-serif;
   --font-mono: var(--font-jetbrains), monospace;
 }
 
@@ -57,9 +94,15 @@
     color: var(--color-texte);
     scroll-behavior: smooth;
   }
+  /* Fond vivant : deux lueurs vertes très diffuses, fixes, sur tout le site. */
   body {
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    background:
+      radial-gradient(60rem 40rem at 100% 0%, color-mix(in oklab, var(--color-halo) 7%, transparent), transparent 70%),
+      radial-gradient(50rem 40rem at 0% 100%, color-mix(in oklab, var(--color-halo) 5%, transparent), transparent 70%),
+      var(--color-fond);
+    background-attachment: fixed;
   }
   h1, h2, h3 {
     font-family: var(--font-display);
@@ -77,6 +120,7 @@
     html { scroll-behavior: auto; }
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
   }
@@ -102,5 +146,77 @@
   .revelation-masquee { opacity: 0; transform: translateY(1rem); }
   @media (scripting: none), (prefers-reduced-motion: reduce) {
     .revelation-masquee { opacity: 1; transform: none; }
+  }
+
+  /* Halos verts du hero : disques flous qui dérivent lentement. */
+  .halo {
+    position: absolute;
+    border-radius: 9999px;
+    pointer-events: none;
+    filter: blur(120px);
+    animation: var(--animate-derive);
+  }
+  .halo-droite {
+    top: 10%;
+    right: -18%;
+    width: 38rem;
+    height: 38rem;
+    background: color-mix(in oklab, var(--color-halo) 42%, transparent);
+  }
+  .halo-gauche {
+    bottom: -8%;
+    left: -10%;
+    width: 28rem;
+    height: 28rem;
+    background: color-mix(in oklab, var(--color-halo) 35%, transparent);
+    animation-direction: alternate-reverse;
+    animation-duration: 20s;
+  }
+  .halo-haut {
+    top: -30%;
+    left: 50%;
+    width: 44rem;
+    height: 24rem;
+    translate: -50% 0;
+    background: color-mix(in oklab, var(--color-texte) 8%, transparent);
+    animation: none;
+  }
+
+  /* Mobile : halos plus petits pour ne pas noyer l’écran. */
+  @media (width < 48rem) {
+    .halo-droite { width: 20rem; height: 20rem; top: 35%; right: -45%; }
+    .halo-gauche { width: 16rem; height: 16rem; }
+    .halo-haut { width: 24rem; }
+  }
+
+  /* Titre du hero : dégradé vertical clair → estompé. */
+  .titre-degrade {
+    background: linear-gradient(to bottom, var(--color-texte) 30%, color-mix(in oklab, var(--color-texte) 45%, transparent));
+    background-clip: text;
+    color: transparent;
+  }
+  .titre-degrade-estompe {
+    background: linear-gradient(to bottom, var(--color-texte-secondaire), color-mix(in oklab, var(--color-texte-secondaire) 25%, transparent));
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Portrait du hero : fondu vers le bas pour se poser sur le bandeau. */
+  .fondu-bas {
+    mask-image: linear-gradient(to bottom, black 70%, transparent);
+  }
+
+  /* Bandeau défilant : s'arrête au survol. */
+  .defilement { animation: var(--animate-defilement); }
+  .defilement:hover { animation-play-state: paused; }
+
+  /* Carte vivante : légère montée et lueur accent au survol. */
+  .lueur-survol {
+    transition: transform 300ms var(--ease-sortie), box-shadow 300ms var(--ease-sortie), border-color 150ms;
+  }
+  .lueur-survol:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in oklab, var(--color-accent) 40%, transparent);
+    box-shadow: 0 24px 60px -24px color-mix(in oklab, var(--color-halo) 45%, transparent);
   }
 }
